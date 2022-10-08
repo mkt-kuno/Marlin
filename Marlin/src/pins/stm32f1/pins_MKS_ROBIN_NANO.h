@@ -44,7 +44,7 @@
 
 //#define LED_PIN                           PB2
 
-#if HAS_TMC_UART
+#if true
   /**
    * TMC2208/TMC2209 stepper drivers
    *
@@ -73,7 +73,7 @@
   #define E0_SERIAL_RX_PIN                  PC13
 
   // Reduce baud rate to improve software serial reliability
-  #define TMC_BAUD_RATE                    19200
+  #define TMC_BAUD_RATE                    57600
 #endif // HAS_TMC_UART
 
 #include "pins_MKS_ROBIN_NANO_common.h"
