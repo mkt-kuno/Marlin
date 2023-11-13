@@ -408,7 +408,7 @@
 #if ENABLED(PSU_CONTROL)
   #define MKS_PWC                 // Using the MKS PWC add-on
   #define PS_OFF_CONFIRM          // Confirm dialog when power off
-  #define PS_OFF_SOUND            // Beep 1s when power off
+  //#define PS_OFF_SOUND            // Beep 1s when power off
   #define PSU_ACTIVE_STATE HIGH      // Set 'LOW' for ATX, 'HIGH' for X-Box
 
   //#define PSU_DEFAULT_OFF               // Keep power off until enabled directly with M80
@@ -692,11 +692,11 @@
   #define MPC_INCLUDE_FAN                             // Model the fan speed?
 
   // Measured physical constants from M306
-  #define MPC_BLOCK_HEAT_CAPACITY { 13.2f }           // (J/K) Heat block heat capacities.
-  #define MPC_SENSOR_RESPONSIVENESS { 0.182f }         // (K/s per ∆K) Rate of change of sensor temperature from heat block.
-  #define MPC_AMBIENT_XFER_COEFF { 0.1222f }           // (W/K) Heat transfer coefficients from heat block to room air with fan off.
+  #define MPC_BLOCK_HEAT_CAPACITY { 4.74f }           // (J/K) Heat block heat capacities.
+  #define MPC_SENSOR_RESPONSIVENESS { 0.174f }         // (K/s per ∆K) Rate of change of sensor temperature from heat block.
+  #define MPC_AMBIENT_XFER_COEFF { 0.0384f }           // (W/K) Heat transfer coefficients from heat block to room air with fan off.
   #if ENABLED(MPC_INCLUDE_FAN)
-    #define MPC_AMBIENT_XFER_COEFF_FAN255 { 0.0056f }  // (W/K) Heat transfer coefficients from heat block to room air with fan on full.
+    #define MPC_AMBIENT_XFER_COEFF_FAN255 { 0.0386f }  // (W/K) Heat transfer coefficients from heat block to room air with fan on full.
   #endif
 
   // For one fan and multiple hotends MPC needs to know how to apply the fan cooling effect.
@@ -1484,7 +1484,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { 0, -26, -1.0 }
+#define NOZZLE_TO_PROBE_OFFSET { 0, -26, -0.92 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -3129,8 +3129,8 @@
  *   For LVGL_UI also copy the 'assets' folder from the build directory to the
  *   root of your SD card, together with the compiled firmware.
  */
-//#define TFT_CLASSIC_UI
-#define TFT_COLOR_UI
+#define TFT_CLASSIC_UI
+//#define TFT_COLOR_UI
 //#define TFT_LVGL_UI
 
 #if ENABLED(TFT_COLOR_UI)
@@ -3167,7 +3167,7 @@
 //
 // Touch Screen Settings
 //
-#define TOUCH_SCREEN
+//#define TOUCH_SCREEN
 #if ENABLED(TOUCH_SCREEN)
   #define BUTTON_DELAY_EDIT      50 // (ms) Button repeat delay for edit screens
   #define BUTTON_DELAY_MENU     250 // (ms) Button repeat delay for menus
